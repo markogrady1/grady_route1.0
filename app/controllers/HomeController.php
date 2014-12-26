@@ -1,5 +1,7 @@
 <?php namespace controllers;
 
+use coreLib\View;
+
 class HomeController extends Controller
 {
 
@@ -21,6 +23,7 @@ class HomeController extends Controller
 
             $this->data = $this->model->getLastPost();
 
+            View::render('../app/views/home.php',  $this->data);
             var_dump($this->data);// for development purposes
         }
 

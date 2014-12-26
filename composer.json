@@ -8,7 +8,10 @@
             "controllers\\": "app/controllers",
             "coreLib\\": "app/coreLib",
             "models\\": "app/models",
-            "views\\": "app/views"
+            "views\\": "app/views",
+            "compile\\": "bootstrap/compile",
+            "contracts\\": "support/contracts"
+
 
         }
     }

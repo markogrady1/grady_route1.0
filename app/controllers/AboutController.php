@@ -1,5 +1,7 @@
 <?php namespace controllers;
 
+use coreLib\View;
+
 class AboutController extends Controller
 {
     private $data;
@@ -15,7 +17,8 @@ class AboutController extends Controller
 
             $this->data = $this->model->getAboutDetails();
 
-            var_dump($this->data);// for development purposes
+            View::render('../app/views/home.php',  $this->data);
+          //  var_dump($this->data);// for development purposes
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

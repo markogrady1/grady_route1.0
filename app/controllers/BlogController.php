@@ -1,5 +1,6 @@
 <?php namespace controllers;
 
+use coreLib\View;
 
 class BlogController extends Controller
 {
@@ -18,7 +19,8 @@ class BlogController extends Controller
         if ($this->db) {
 
             $this->data = $this->model->getAllPosts();
-            var_dump($this->data);// for development purposes
+            View::render('../app/views/home.php',  $this->data);
+           // var_dump($this->data);// for development purposes
         }
     }
 } 
