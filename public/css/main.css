@@ -1,0 +1,21 @@
+.header {
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    padding-left: 20%;
+}
+
+.menu li {
+    padding-left: 20px;
+    display: inline-block;
+    font-size: .9em;
+}
+
+.menu li a{
+    text-decoration: none;
+    color: #fff;
+}
