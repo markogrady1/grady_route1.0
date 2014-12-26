@@ -1,15 +1,19 @@
 <?php namespace controllers;
 
-class AboutController extends Controller{
+class AboutController extends Controller
+{
     private $data;
 
     public function index()
     {
 
         $this->model = $this->acquireModel('About');
+
         $this->db = $this->model->getConnection();
-        if($this->db) {
-          $this->data = $this->model->getAboutDetails();
+
+        if ($this->db) {
+
+            $this->data = $this->model->getAboutDetails();
 
             var_dump($this->data);// for development purposes
         }

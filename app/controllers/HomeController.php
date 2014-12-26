@@ -14,10 +14,12 @@ class HomeController extends Controller
     {
 
         $this->model = $this->acquireModel('Blog');
+
         $this->db = $this->model->getConnection();
-        if($this->db) {
-            echo "connected for home controller";
-           $this->data = $this->model->getLastPost();
+
+        if ($this->db) {
+
+            $this->data = $this->model->getLastPost();
 
             var_dump($this->data);// for development purposes
         }
