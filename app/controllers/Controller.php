@@ -5,6 +5,7 @@ use coreLib\Factory;
 class Controller
 {
     protected $db;
+
     private $factory;
 
     /**
@@ -18,7 +19,7 @@ class Controller
     public function __construct(Factory $factory)
     {
         $this->model = "";
-        echo "call from the controller", "<br><br>";
+
         $this->factory = $factory;
     }
 
@@ -30,11 +31,11 @@ class Controller
      */
     public function acquireModel($class)
     {
-//        $this->model = 'models\\' . $model;
+
         $class = 'models\\' . $class;
 
         $newModel = $this->factory->getMVCInstance($class);
-        echo "get instance for model", "<br><br>";
+
         return $newModel;
 
     }

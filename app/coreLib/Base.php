@@ -5,19 +5,6 @@ require __DIR__ . '/../config/config.php';
 class Base
 {
 
-    /**
-     * The current query value bindings.
-     *
-     * @var array
-     */
-    protected $bindings = array(
-        'select' => [],
-        'join' => [],
-        'where' => [],
-        'having' => [],
-        'order' => [],
-    );
-
     private $pdo;
 
     /*
@@ -103,7 +90,7 @@ class Base
 
             return $this;
         }
-        //return $this;
+
     }
 
     private function action2($action, $table, $where = array(), $condition)
@@ -117,14 +104,21 @@ class Base
             );
 
             $field = $where[0];
+
             $operator = $where[1];
+
             $value = $where[2];
 
             if (in_array($operator, $operators)) {
+
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
+
                 if (isset($condition)) {
+
                     if (count($condition) == 2) {
+
                         $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?{$condition[0]} {$condition[1]}";
+
                     }
                 }
                 if (!$this->query($sql, array($value))->error()) {
@@ -145,12 +139,9 @@ class Base
 	*/
     private function action($action, $table, $where = array(), $condition)
     {
-        if (isset($condition)) {
-            $conditionals = array(
-                'ORDER BY', 'DESC', 'ASC'
-            );
-        }
+
         if (count($where) === 3) {
+
             $operators = array(
                 '=', '<', '>', '<=', '>=', '<>', '!=',
                 'like', 'not like', 'between', 'ilike',
@@ -159,7 +150,9 @@ class Base
             );
 
             $field = $where[0];
+
             $operator = $where[1];
+
             $value = $where[2];
 
             if (in_array($operator, $operators)) {
@@ -176,6 +169,7 @@ class Base
             }
         }
         if (!$where) {
+
             $append = $this->setCondition($condition);
 
             $sql = "{$action} FROM {$table} " . $append;
@@ -193,13 +187,19 @@ class Base
     public function setCondition(array $condition)
     {
         $sqlAppend = "";
+
         if (isset($condition)) {
+
             if (count($condition) == 2) {
+
                 $sqlAppend = " {$condition[0]} {$condition[1]}";
 
                 return $sqlAppend;
+
             } else {
+
                 if (count($condition) == 3) {
+
                     $sqlAppend = " {$condition[0]} {$condition[1]}  {$condition[2]}";
 
                     return $sqlAppend;
@@ -267,14 +267,20 @@ class Base
     public function insert($table, $fields)
     {    //[3]
         if (count($fields)) {
+
             $keys = array_keys($fields);
+
             $sql = "INSERT INTO {$table} (" . implode(',', $keys) . ") ";
+
             $placeHolders = $this->getPlaceHolder($fields);
+
             $sql .= " VALUES({$placeHolders}) ";
+
             if (!$this->query($sql, array_values($fields))) {
 
                 return $this;
             }
+
             $this->notify($this->count);
 
         }

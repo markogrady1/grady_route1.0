@@ -19,7 +19,7 @@ class HomeController extends Controller
             echo "connected for home controller";
            $this->data = $this->model->getLastPost();
 
-            var_dump($this->data);
+            var_dump($this->data);// for development purposes
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

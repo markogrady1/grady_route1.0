@@ -16,10 +16,10 @@ class BlogController extends Controller
 
         $this->db = $this->model->getConnection();
         if ($this->db) {
-            echo "connected for blog controller";
+
             $this->data = $this->model->getAllPosts();
 
-            var_dump($this->data);
+            var_dump($this->data);// for development purposes
         }
     }
 } 

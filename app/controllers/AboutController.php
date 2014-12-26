@@ -2,11 +2,6 @@
 
 class AboutController extends Controller{
     private $data;
-//    public function __construct() {
-//        echo "from the aboutcontroller","<br><br>";
-//    }
-
-
 
     public function index()
     {
@@ -16,7 +11,7 @@ class AboutController extends Controller{
         if($this->db) {
           $this->data = $this->model->getAboutDetails();
 
-            var_dump($this->data);
+            var_dump($this->data);// for development purposes
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

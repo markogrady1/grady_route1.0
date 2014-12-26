@@ -1,13 +1,13 @@
 <?php namespace coreLib;
 
-
 use controllers;
 use coreLib\Factory;
 use coreLib\logger\Logger;
 use models\Blog;
 use models\About;
+
 /**
- * @package    thereformat
+ * @package    grady_route1.0
  * @author     Mark O Grady <markogrady.code@gmail.com>
  * @copyright  2014
  */
@@ -74,7 +74,6 @@ class Application
         $this->factory = $factory;
 
         $this->route();
-
     }
 
     /**
@@ -86,21 +85,17 @@ class Application
     {
 
         $url = $this->parseUrl();
-//        if (isset($url)) {
-            $url = $this->direct($url);
-            ///var_dump($url);//ECHO
-            if ($this->controllerInstance == null) {
 
-                $this->getInstance();
+        $url = $this->direct($url);
 
-                $method = $this->defaultMethod;
+        if ($this->controllerInstance == null) {
 
-                $this->controllerInstance->$method();
-            }
-//        } else {
-//            $this->getInstance();
-//        }
+            $this->getInstance();
 
+            $method = $this->defaultMethod;
+
+            $this->controllerInstance->$method();
+        }
     }
 
     /**
@@ -118,7 +113,6 @@ class Application
             $url = filter_var($url, FILTER_SANITIZE_URL);
 
             $url = explode('/', $url);
-
 
             return $url;
         }
@@ -139,11 +133,10 @@ class Application
             if ($this->isController($url[0])) {
 
                 $url = $this->unsetValue($url, 0);
-                //var_dump($url);
+
                 $this->getInstance();
 
                 $url = $this->checkMethod($url);
-
 
                 return $url;
 
@@ -167,23 +160,20 @@ class Application
         $newController = ucfirst($uri) . 'Controller';
 
         $controllerFile = ucfirst($uri) . 'Controller.php';
-       // echo $this->defaultController, "<br>";//ECHO
+
         if (file_exists('../app/controllers/' . $controllerFile)) {
 
             $this->model = ucfirst($uri);
 
             $this->defaultController = $newController;
-           // echo $this->defaultController, "<br>";//ECHO
 
             return true;
 
         } else {
 
-
             return false;
         }
     }
-
 
     /**
      * Create an instance of the controller.
@@ -196,7 +186,6 @@ class Application
         $class = 'controllers\\' . $this->defaultController;
 
         $this->controllerInstance = $this->factory->getMVCInstance($class, $this->model);
-
 
     }
 
@@ -228,7 +217,6 @@ class Application
         }
         $this->addBehaviour($url);
 
-
         return $url;
     }
 
@@ -258,7 +246,6 @@ class Application
     {
 
         unset($arrayUrl[$index]);
-
 
         return $arrayUrl;
     }

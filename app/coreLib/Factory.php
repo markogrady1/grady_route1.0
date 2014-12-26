@@ -7,7 +7,6 @@ use models\About;
 class Factory
 {
 
-
     /**
      * Return an instance of a given class.
      *
@@ -19,7 +18,9 @@ class Factory
     {
 
         $instance = ($model == null) ? new $class($this) : new $class($this, $model);
-        print_r($instance);echo "<br><br>";
+
+        print_r($instance);echo "<br><br>";//for development purposes
+
         return $instance;
     }
 }
