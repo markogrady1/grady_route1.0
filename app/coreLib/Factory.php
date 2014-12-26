@@ -1,7 +1,9 @@
 <?php namespace coreLib;
 
 use controllers\Controller;
+use models\HomeModel;
 use models\Blog;
+
 use models\About;
 
 class Factory
@@ -18,8 +20,6 @@ class Factory
     {
 
         $instance = ($model == null) ? new $class($this) : new $class($this, $model);
-
-        print_r($instance);echo "<br><br>";//for development purposes
 
         return $instance;
     }

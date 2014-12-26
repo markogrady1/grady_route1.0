@@ -123,7 +123,7 @@ class Base
                 }
                 if (!$this->query($sql, array($value))->error()) {
 
-                    return $this->results;
+                    return $this;
                 }
 
             }
@@ -196,16 +196,24 @@ class Base
 
                 return $sqlAppend;
 
-            } else {
+            } elseif (count($condition) == 3) {
 
-                if (count($condition) == 3) {
+                $sqlAppend = " {$condition[0]} {$condition[1]}  {$condition[2]}";
 
-                    $sqlAppend = " {$condition[0]} {$condition[1]}  {$condition[2]}";
+                return $sqlAppend;
+            } elseif (count($condition) == 4) {
 
-                    return $sqlAppend;
-                }
+                $sqlAppend = " {$condition[0]} {$condition[1]}  {$condition[2]}  {$condition[3]}";
 
+                return $sqlAppend;
+            } elseif (count($condition) == 5) {
+
+                $sqlAppend = " {$condition[0]} {$condition[1]}  {$condition[2]}  {$condition[3]}  {$condition[4]}";
+
+                return $sqlAppend;
             }
+
+
         }
         return $sqlAppend;
     }
@@ -222,6 +230,16 @@ class Base
 
         return $data;
     }
+
+
+    /**
+     * query with select condition
+     */
+//    public function getWithCondition($table, $where = array(), $condition = array())
+//    {
+//        if() {}
+//        $data = $this->action($queryCondition,)
+//    }
 
     /*
     *

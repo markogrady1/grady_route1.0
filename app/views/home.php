@@ -10,6 +10,14 @@
 <?php include '../app/views/layouts/header.php' ?>
 
 
+
+
+
+
+
+
 {$data[0]['title'],  "<br>" ;}
 {$data[0]['id'],  "<br>" ;}
 {$data[0]['content'],  "<br>" ;}
+
+<?php include '../app/views/layouts/header.php' ?>

@@ -10,13 +10,13 @@ class Blog extends Base
 
     }
 
-    public function getLastPost()
-    {
-
-        $data = $this->get('blgs', array("id","=","54"));
-
-        return $data;
-    }
+//    public function getLastPost()
+//    {
+//
+//        $data = $this->get('blgs', array("id","=","54"));
+//
+//        return $data;
+//    }
 
     public function getAllPosts()
     {

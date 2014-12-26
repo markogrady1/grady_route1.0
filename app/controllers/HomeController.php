@@ -2,6 +2,7 @@
 
 use coreLib\View;
 
+
 class HomeController extends Controller
 {
 
@@ -15,7 +16,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $this->model = $this->acquireModel('Blog');
+        $this->model = $this->acquireModel('HomeModel');
 
         $this->db = $this->model->getConnection();
 
@@ -24,7 +25,7 @@ class HomeController extends Controller
             $this->data = $this->model->getLastPost();
 
             View::render('../app/views/home.php',  $this->data);
-            var_dump($this->data);// for development purposes
+
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

@@ -18,7 +18,7 @@ class AboutController extends Controller
             $this->data = $this->model->getAboutDetails();
 
             View::render('../app/views/home.php',  $this->data);
-          //  var_dump($this->data);// for development purposes
+
         }
 
 //        $posts = $this->model->getLatestPost($this->db);
