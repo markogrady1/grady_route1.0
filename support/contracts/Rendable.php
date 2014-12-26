@@ -1,7 +1,4 @@
-<?php
-
-namespace contracts;
-
+<?php namespace contracts;
 
 interface Rendable {
 
