@@ -12,10 +12,17 @@ grady_route1.0/
     |   |     ├── Controller.php
     |   |     └── BlogController.php
     |   |
-        ├── coreLib/
-    |         ├── demo.css
-    |         └── grady_docs.html
-    |
+    |   ├── coreLib/
+    |   |     ├── logger/
+    |   |     |     └── Logger.php 
+    |   |     ├── Application.php
+    |   |     ├── Base.php
+    |   |     └── Factory.php
+    |   |
+    
+    
+    
+    
     └── js/
         ├── grady.js
         └── grady.min.js
