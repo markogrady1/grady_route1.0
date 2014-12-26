@@ -1,0 +1,5 @@
+/app/config
+/vendor
+composer.phar
+composer.lock
+.idea
