@@ -20,18 +20,5 @@ class AboutController extends Controller
             View::render('../app/views/home.php',  $this->data);
 
         }
-
-//        $posts = $this->model->getLatestPost($this->db);
-//
-//        $dateString = $this->getReadableDate($posts);
-//
-//        $posts->date = $dateString;
-//
-//        $logger = new VisitorLog;
-//
-//        $logger->logVisit();
-//
-//        View::render('../app/views/home.php', $posts);
     }
-
 }
