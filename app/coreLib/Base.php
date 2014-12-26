@@ -50,7 +50,7 @@ class Base
     public function getConnection()
     {
 
-        $options = array(\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_OBJ, \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
+        $options = array(\PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_BOTH, \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION);
         $this->pdo = new \PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
 
         return $this->pdo;
@@ -79,7 +79,7 @@ class Base
             }
             if ($this->query->execute()) {
                 /*	Store results */
-                $this->results = $this->query->fetchAll(\PDO::FETCH_OBJ);
+                $this->results = $this->query->fetchAll(\PDO::FETCH_BOTH);
                 /*	Store number of rows returned */
                 $this->count = $this->query->rowCount();
 
@@ -123,7 +123,7 @@ class Base
                 }
                 if (!$this->query($sql, array($value))->error()) {
 
-                    return $this;
+                    return $this->results;
                 }
 
             }
@@ -163,7 +163,7 @@ class Base
 
                 if (!$this->query($sql, array($value))->error()) {
 
-                    return $this;
+                    return $this->results;
                 }
 
             }
@@ -176,7 +176,7 @@ class Base
 
             if (!$this->query($sql, null)->error()) {
 
-                return $this;
+                return $this->results;
             }
 
         }

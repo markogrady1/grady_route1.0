@@ -18,7 +18,6 @@ class BlogController extends Controller
         if ($this->db) {
 
             $this->data = $this->model->getAllPosts();
-
             var_dump($this->data);// for development purposes
         }
     }
