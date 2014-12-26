@@ -4,8 +4,18 @@ use coreLib\Factory;
 
 class Controller
 {
+    /**
+     * Instance of the database
+     * 
+     * @var object $db
+     */
     protected $db;
 
+    /**
+     * Instance of the Factory class
+     * 
+     * @var Factory $factory
+     */
     private $factory;
 
     /**
