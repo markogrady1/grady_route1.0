@@ -21,7 +21,7 @@ grady_route1.0/
     ├── bootstrap/
     |      └── compile/
     |
-    ├── supportt/
+    ├── support/
     |      └── contracts/
     |
     └── public/
