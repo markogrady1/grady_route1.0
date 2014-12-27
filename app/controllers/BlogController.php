@@ -21,6 +21,8 @@ class BlogController extends Controller
             $this->data = $this->model->getAllPosts();
             View::render('../app/views/blog.php',  $this->data);
 
+        } else {
+            return false;
         }
     }
 } 

@@ -186,7 +186,7 @@ class Base
 
     /**
      * Set condition of query to append to end of string
-     * 
+     *
      * @param array $condition
      * @return string
      */

@@ -32,3 +32,13 @@ footer {
     background-color: #000;
     color: #fff;
 }
+
+.blog-links {
+  font-family: Georgia,"Times New Roman",Times,serif;
+    text-decoration: none;
+    color: #428BCA;
+}
+.blog-links:hover {
+    text-decoration: underline;
+
+}

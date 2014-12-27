@@ -26,6 +26,8 @@ class HomeController extends Controller
 
             View::render('../app/views/home.php',  $this->data);
 
+        }else{
+            return false;
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

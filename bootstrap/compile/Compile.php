@@ -63,14 +63,14 @@ class Compile {
 	 * @return string
 	 */
 	public function placeSyntax($file) {
-		
+		$eol = ",'<br>'";
 		if(preg_match('/{/', $file)) {
 
 			$templated = preg_replace(array('/[{]{2}/','/[}]{2}/'), array('<?php ',' ?>'), $file);
 
 			$templated = str_replace(
-				array('{',  '}', '&lt;', '&gt;', 'endforeach','endfor', ') ?>'),
-				array('<?php echo ', ' ?>', '<', '>', '}','}', ') { ?>'),
+				array('{',  '}', '&lt;', '&gt;', 'endforeach','endfor', ') ?>','.PHP_EOL',' .PHP_EOL',' . PHP_EOL','. PHP_EOL'),
+				array('<?php echo ', ' ?>', '<', '>', '}','}', ') { ?>',$eol, $eol, $eol, $eol),
 				$templated);
 
 
