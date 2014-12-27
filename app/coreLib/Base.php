@@ -184,6 +184,12 @@ class Base
         return false;
     }
 
+    /**
+     * Set condition of query to append to end of string
+     * 
+     * @param array $condition
+     * @return string
+     */
     public function setCondition(array $condition)
     {
         $sqlAppend = "";
