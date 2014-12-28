@@ -3,7 +3,6 @@
 use controllers\Controller;
 use models\HomeModel;
 use models\Blog;
-
 use models\About;
 
 class Factory
@@ -16,7 +15,7 @@ class Factory
      * @param array $model
      * @return mixed controllers\Controller | coreLib\Base
      */
-    public function getMVCInstance($class, $model = null)
+    public function getInstance($class, $model = null)
     {
 
         $instance = ($model == null) ? new $class($this) : new $class($this, $model);

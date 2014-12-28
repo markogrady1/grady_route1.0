@@ -22,7 +22,7 @@ class BlogControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodReturnsFalseWhenNoConnection()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn(null);
         $blog = new BlogController($this->factoryMock);
         $data = $blog->index();
@@ -32,7 +32,7 @@ class BlogControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolves_PDOInstance()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getAllPosts')->andReturn(array('foo' => 'bar'));
         $blog = new BlogController($this->factoryMock);
@@ -43,7 +43,7 @@ class BlogControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolvesArray()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getAllPosts')->andReturn(array('foo' => 'bar'));
         $blog = new BlogController($this->factoryMock);

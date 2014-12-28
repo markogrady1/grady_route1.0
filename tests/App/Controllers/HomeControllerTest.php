@@ -20,7 +20,7 @@ class HomeControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolves_PDOInstance()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getLastPost')->andReturn(array('foo' => 'bar'));
         $homeController = new HomeController($this->factoryMock);
@@ -32,7 +32,7 @@ class HomeControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolvesArray()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getLastPost')->andReturn(array('foo' => 'bar'));
         $homeController = new HomeController($this->factoryMock);
@@ -44,7 +44,7 @@ class HomeControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodReturnsFalseWhenNoConnection()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn(null);
         $homeController = new HomeController($this->factoryMock);
         $data = $homeController->index();

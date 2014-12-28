@@ -44,7 +44,7 @@ class Controller
 
         $class = 'models\\' . $class;
 
-        $newModel = $this->factory->getMVCInstance($class);
+        $newModel = $this->factory->getInstance($class);
 
         return $newModel;
 

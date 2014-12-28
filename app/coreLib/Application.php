@@ -185,7 +185,7 @@ class Application
 
         $class = 'controllers\\' . $this->defaultController;
 
-        $this->controllerInstance = $this->factory->getMVCInstance($class, $this->model);
+        $this->controllerInstance = $this->factory->getInstance($class, $this->model);
 
     }
 

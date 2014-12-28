@@ -22,7 +22,7 @@ class AboutControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodReturnsFalseWhenNoConnection()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn(null);
         $about = new AboutController($this->factoryMock);
         $data = $about->index();
@@ -32,7 +32,7 @@ class AboutControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolvesPDOInstance()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getAboutDetails')->andReturn(array('foo' => 'bar'));
         $about = new AboutController($this->factoryMock);
@@ -43,7 +43,7 @@ class AboutControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testIndexMethodResolvesArray()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
         $this->modelMock->shouldReceive('getConnection')->andReturn($this->PDOMock);
         $this->modelMock->shouldReceive('getAboutDetails')->andReturn(array('foo' => 'bar'));
         $about = new AboutController($this->factoryMock);

@@ -23,7 +23,7 @@ class ControllerTest extends \PHPUnit_Framework_TestCase
 
     public function testAcquireModel()
     {
-        $this->factoryMock->shouldReceive('getMVCInstance')->andReturn($this->modelMock);
+        $this->factoryMock->shouldReceive('getInstance')->andReturn($this->modelMock);
 
         $controller = new Control($this->factoryMock);
 
