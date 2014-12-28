@@ -4,8 +4,18 @@ use coreLib\View;
 
 class AboutController extends Controller
 {
+    /**
+     * Values returned from the model
+     * 
+     * @var array $data
+     */
     private $data;
 
+    /**
+     * initial method for the AboutController
+     * 
+     * @return boolean
+     */
     public function index()
     {
 
