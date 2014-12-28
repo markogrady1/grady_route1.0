@@ -34,7 +34,7 @@ class Controller
     }
 
     /**
-     * Acquires model of a given value.
+     * Acquires model of a given value from factory instance.
      *
      * @param  string $model
      * @return object coreLib/Base
