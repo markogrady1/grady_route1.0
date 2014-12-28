@@ -32,8 +32,8 @@ grady_route1.0/
     └── tests/
            └── App/    
                 ├── Controllers/      
-                ├── Models/      
-                └── CoreLib/    
-           
+                ├── CoreLib/     
+                └── Models/      
+  
            
   ```
