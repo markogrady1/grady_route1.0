@@ -36,14 +36,14 @@ class Application
     private $controllerInstance = null;
 
     /**
-     * The name of default method.
+     * The name of default method used by controllers.
      *
      * @var string $defaultMethod
      */
     private $defaultMethod = 'index';
 
     /**
-     * Is the current route a default setting.
+     * Specifies if the default route is being used.
      *
      * @var boolean $defaultRoute
      */
@@ -77,7 +77,7 @@ class Application
     }
 
     /**
-     * Direct the applications route.
+     * Configure the current route.
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class Application
     /**
      * Parse a given URL.
      *
-     * @return array
+     * @return mixed array | null
      */
     public function parseUrl()
     {
@@ -176,7 +176,7 @@ class Application
     }
 
     /**
-     * Create an instance of the controller.
+     * Obtain an instance of the controller.
      *
      * @return void
      */
@@ -221,7 +221,7 @@ class Application
     }
 
     /**
-     * Acccess the methods for cocntroller instance.
+     * Acccess the method of a given controller instance.
      *
      * @param array $url
      * @return void
