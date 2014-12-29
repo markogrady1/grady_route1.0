@@ -10,7 +10,12 @@ class BlogController extends Controller
      * @var array $data
      */
     private $data;
-
+    
+    /**
+     * initial method for the AboutController
+     * 
+     * @return void | boolean
+     */
     public function index()
     {
         $this->model = $this->acquireModel('Blog');
