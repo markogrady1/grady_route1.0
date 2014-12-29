@@ -14,7 +14,7 @@ class AboutController extends Controller
     /**
      * initial method for the AboutController
      * 
-     * @return boolean
+     * @return void | boolean
      */
     public function index()
     {
