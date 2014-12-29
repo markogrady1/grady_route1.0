@@ -1,7 +1,5 @@
 <?php namespace CoreLib;
 
-//use controllers\BlogController;
-//use controllers\HomeController;
 use coreLib\Factory;
 use models\Blog;
 
@@ -23,21 +21,21 @@ class FactoryTest extends \PHPUnit_Framework_TestCase
         \Mockery::close();
     }
 
-    public function testResolvingBlogControllerFromFactory()
+    public function testResolveBlogControllerFromFactory()
     {
         $factory = new Factory();
         $instance = $factory->getInstance('BlogController');
         $this->assertInstanceOf('BlogController', $instance);
     }
 
-    public function testResolvingHomeControllerFromFactory()
+    public function testResolveHomeControllerFromFactory()
     {
         $factory = new Factory();
         $instance = $factory->getInstance('HomeController');
         $this->assertInstanceOf('HomeController', $instance);
     }
 
-    public function testResolvingAboutControllerFromFactory()
+    public function testResolveAboutControllerFromFactory()
     {
         $factory = new Factory();
         $instance = $factory->getInstance('AboutController');
