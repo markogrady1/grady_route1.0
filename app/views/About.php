@@ -7,7 +7,7 @@ class About implements Rendable
     /**
      * Path for the about page
      * 
-     * @var string $data
+     * @var string $view
      */
     public $view;
     
