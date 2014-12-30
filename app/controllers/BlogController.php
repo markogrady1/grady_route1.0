@@ -19,10 +19,19 @@ class BlogController extends Controller
         if ($this->db) {
 
             $this->data = $this->model->getAllPosts();
-            View::render('../app/views/content/blogView.php', 'Blog', $this->data);
+
+            $viewDetails = array(
+                $viewDetails[0] = '../app/views/content/blogView.php',
+                $viewDetails[1] = 'Blog',
+                $viewDetails[2] = $this->data
+            );
+
+            View::render($viewDetails, $this->factory);
 
         } else {
+
             return false;
         }
+
     }
 } 

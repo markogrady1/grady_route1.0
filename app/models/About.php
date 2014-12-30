@@ -9,7 +9,6 @@ class About extends Base
     {
         $data = $this->get('about', array());
 
-
         return $data;
     }
 }

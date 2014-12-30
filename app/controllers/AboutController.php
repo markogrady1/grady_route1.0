@@ -6,14 +6,14 @@ class AboutController extends Controller
 {
     /**
      * Values returned from the model
-     * 
+     *
      * @var array $data
      */
     private $data;
 
     /**
      * initial method for the AboutController
-     * 
+     *
      * @return boolean
      */
     public function index()
@@ -27,10 +27,18 @@ class AboutController extends Controller
 
             $this->data = $this->model->getAboutDetails();
 
-            View::render('../app/views/content/aboutView.php','About',  $this->data);
+            $viewDetails = array(
+                $viewDetails[0] = '../app/views/content/aboutView.php',
+                $viewDetails[1] = 'About',
+                $viewDetails[2] = $this->data
+            );
+
+            View::render($viewDetails, $this->factory);
 
         } else {
+
             return false;
+
         }
     }
 }

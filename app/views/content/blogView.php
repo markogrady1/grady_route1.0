@@ -4,8 +4,8 @@
 
 <?php
 
-for($i = 0; $i < count($this->data);  $i++) {
-    echo $this->data[$i]['title']."<br>";
+for ($i = 0; $i < count($this->data); $i++) {
+    echo $this->data[$i]['title'] . "<br>";
 }
 
 ?>

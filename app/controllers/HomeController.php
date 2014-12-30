@@ -24,10 +24,18 @@ class HomeController extends Controller
 
             $this->data = $this->model->getLastPost();
 
-            View::render('../app/views/content/homeView.php', 'HomeMain', $this->data);
+            $viewDetails = array(
+                $viewDetails[0] = '../app/views/content/homeView.php',
+                $viewDetails[1] = 'HomeMain',
+                $viewDetails[2] = $this->data
+            );
 
-        }else{
+            View::render($viewDetails, $this->factory);
+
+        } else {
+
             return false;
+
         }
 
 //        $posts = $this->model->getLatestPost($this->db);

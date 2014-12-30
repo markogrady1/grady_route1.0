@@ -22,4 +22,11 @@ class Factory
 
         return $instance;
     }
+
+    public function getViewInstance($view, $class, $data)
+    {
+        $instance = !isset($data) ? new $class($view) : new $class($view, $data);
+
+        return $instance;
+    }
 }

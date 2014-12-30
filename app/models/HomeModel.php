@@ -20,7 +20,7 @@ class HomeModel extends Base
             '1'
         );
 
-        $data = $this->get( "blgs", array(), $conditional);
+        $data = $this->get("blgs", array(), $conditional);
 
         return $data;
     }

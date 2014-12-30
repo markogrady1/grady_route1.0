@@ -2,17 +2,19 @@
 
 use contracts\Rendable;
 
-class Blog implements Rendable{
+class Blog implements Rendable
+{
     public $view;
     public $data;
-    public function __construct($view, $data) {
-        echo "<h1>i am certainly hewe</h1>";
+
+    public function __construct($view, $data)
+    {
         $this->view = $view;
         $this->data = $data;
     }
 
-    public function render(){
-        echo "blog view";
+    public function render()
+    {
         require $this->view;
     }
 }

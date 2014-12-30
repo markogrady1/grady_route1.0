@@ -2,34 +2,42 @@
 
 use views;
 
-class View {
+class View
+{
 
-    public static function render($view, $class, array $data)
+    private static $factory;
+
+    public static function render(array $viewDetails, Factory $factory)
     {
-        if($view != '../app/views/layouts/footer.php'){
+        list($path, $class, $data) = $viewDetails;
 
-            self::resolveView($view, $class, $data);
+        self::$factory = $factory;
 
-        }else{
+        if ($path != '../app/views/layouts/footer.php') {
 
-            require_once( '../views/layouts/' . $view . '.php');
+            self::resolveView($path, $class, $data);
+
+        } else {
+
+            require_once('../views/layouts/' . $path . '.php');
         }
 
     }
 
-    public static function resolveView($view, $class, $data = []) {
+    public static function resolveView($view, $class, $data = [])
+    {
 
-        if(is_file($view)) {
+        if (is_file($view)) {
 
             $actualView = "views\\$class";
 
-            $view = new $actualView($view, $data);
+            $view = self::$factory->getViewInstance($view, $actualView, $data);
 
             $view->render();
 
-        }else{
+        } else {
 
-           return false;
+            return false;
         }
     }
 }
