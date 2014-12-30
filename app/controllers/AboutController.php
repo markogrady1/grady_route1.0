@@ -13,7 +13,7 @@ class AboutController extends Controller
 
     /**
      * initial method for the AboutController
-     * 
+     *
      * @return void | boolean
      */
     public function index()
@@ -28,9 +28,9 @@ class AboutController extends Controller
             $this->data = $this->model->getAboutDetails();
 
             $viewDetails = array(
-                $viewDetails[0] = '../app/views/content/aboutView.php',
-                $viewDetails[1] = 'About',
-                $viewDetails[2] = $this->data
+                'path'  => '../app/views/content/aboutView.php',
+                'class' => 'About',
+                'data'  => $this->data
             );
 
             View::render($viewDetails, $this->factory);

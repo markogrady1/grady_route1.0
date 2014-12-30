@@ -25,9 +25,9 @@ class HomeController extends Controller
             $this->data = $this->model->getLastPost();
 
             $viewDetails = array(
-                $viewDetails[0] = '../app/views/content/homeView.php',
-                $viewDetails[1] = 'HomeMain',
-                $viewDetails[2] = $this->data
+                'path'  => '../app/views/content/homeView.php',
+                'class' => 'HomeMain',
+                'data'  => $this->data
             );
 
             View::render($viewDetails, $this->factory);

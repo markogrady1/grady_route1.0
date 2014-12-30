@@ -26,9 +26,9 @@ class BlogController extends Controller
             $this->data = $this->model->getAllPosts();
 
             $viewDetails = array(
-                $viewDetails[0] = '../app/views/content/blogView.php',
-                $viewDetails[1] = 'Blog',
-                $viewDetails[2] = $this->data
+                'path'  => '../app/views/content/blogView.php',
+                'class' => 'Blog',
+                'data'  => $this->data
             );
 
             View::render($viewDetails, $this->factory);

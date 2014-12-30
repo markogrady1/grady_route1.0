@@ -9,8 +9,10 @@ class View
 
     public static function render(array $viewDetails, Factory $factory)
     {
-        list($path, $class, $data) = $viewDetails;
+        $arrayDetails = array_values($viewDetails);
 
+        list($path, $class, $data) =  $arrayDetails;
+        
         self::$factory = $factory;
 
         if ($path != '../app/views/layouts/footer.php') {
