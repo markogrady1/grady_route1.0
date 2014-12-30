@@ -23,7 +23,12 @@ class Blog implements Rendable
         $this->view = $view;
         $this->data = $data;
     }
-
+   
+   /**
+    * Require a given view
+    * 
+    * @return void
+    */
     public function render()
     {
         require $this->view;
