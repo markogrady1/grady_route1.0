@@ -27,7 +27,7 @@ class AboutController extends Controller
 
             $this->data = $this->model->getAboutDetails();
 
-            View::render('../app/views/home.php',  $this->data);
+            View::render('../app/views/content/aboutView.php','About',  $this->data);
 
         } else {
             return false;

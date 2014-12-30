@@ -19,7 +19,7 @@ class BlogController extends Controller
         if ($this->db) {
 
             $this->data = $this->model->getAllPosts();
-            View::render('../app/views/blog.php',  $this->data);
+            View::render('../app/views/content/blogView.php', 'Blog', $this->data);
 
         } else {
             return false;

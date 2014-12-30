@@ -131,5 +131,9 @@ class Compile {
 		
 		require('../bootstrap/compile/compiled/'.$newFile);
 	}
+
+    public function displayIt() {
+
+    }
 }
 

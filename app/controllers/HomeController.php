@@ -24,7 +24,7 @@ class HomeController extends Controller
 
             $this->data = $this->model->getLastPost();
 
-            View::render('../app/views/home.php',  $this->data);
+            View::render('../app/views/content/homeView.php', 'HomeMain', $this->data);
 
         }else{
             return false;
@@ -40,6 +40,6 @@ class HomeController extends Controller
 //
 //        $logger->logVisit();
 //
-//        View::render('../app/views/home.php', $posts);
+//        View::render('../app/views/homeView.php', $posts);
     }
 }

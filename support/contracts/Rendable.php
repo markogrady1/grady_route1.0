@@ -2,5 +2,5 @@
 
 interface Rendable {
 
-    public static function render($view, array $data);
+    public function render();
 } 

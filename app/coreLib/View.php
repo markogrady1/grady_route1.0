@@ -1,14 +1,14 @@
 <?php namespace coreLib;
 
-use contracts\Rendable;
-use compile\Compile;
-class View implements Rendable{
+use views;
 
-    public static function render($view, array $data)
+class View {
+
+    public static function render($view, $class, array $data)
     {
         if($view != '../app/views/layouts/footer.php'){
 
-            self::compile($view, $data);
+            self::resolveView($view, $class, $data);
 
         }else{
 
@@ -17,18 +17,19 @@ class View implements Rendable{
 
     }
 
-    /**
-     * Compile view for templating
-     *
-     * @param  string $view
-     * @param  array $data
-     * @return void
-     */
-    public static function compile($view, $data = []) {
+    public static function resolveView($view, $class, $data = []) {
 
-        $compile = new Compile($view);
+        if(is_file($view)) {
 
-        $compile->compile($data);
+            $actualView = "views\\$class";
 
+            $view = new $actualView($view, $data);
+
+            $view->render();
+
+        }else{
+
+           return false;
+        }
     }
 }
