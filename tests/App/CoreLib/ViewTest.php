@@ -20,7 +20,7 @@ class ViewTest extends \PHPUnit_Framework_TestCase
      * 
      * @return void
      */
-    public function testResolveViewReturnsFalseWhenClassDoesNotExist()
+    public function testResolveViewMethod_ReturnsFalseWhenClassDoesNotExist()
     {
         $this->assertFalse(view::resolveView('somePath/someWhere/someFile.php', 'SomeClass', array('foo' => 'bar')));
 
