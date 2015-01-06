@@ -70,7 +70,6 @@ class Application
      */
     public function __construct(Factory $factory)
     {
-
         $this->factory = $factory;
 
         $this->route();
@@ -83,7 +82,6 @@ class Application
      */
     public function route()
     {
-
         $url = $this->parseUrl();
 
         $url = $this->direct($url);
@@ -105,7 +103,6 @@ class Application
      */
     public function parseUrl()
     {
-
         if (isset($_GET['url'])) {
 
             $url = rtrim($_GET['url'], '/');
@@ -127,7 +124,6 @@ class Application
      */
     public function direct($url)
     {
-
         if (isset($url[0])) {
 
             if ($this->isController($url[0])) {
@@ -156,7 +152,6 @@ class Application
      */
     public function isController($uri)
     {
-
         $newController = ucfirst($uri) . 'Controller';
 
         $controllerFile = ucfirst($uri) . 'Controller.php';
@@ -182,7 +177,6 @@ class Application
      */
     public function getInstance()
     {
-
         $class = 'controllers\\' . $this->defaultController;
 
         $this->controllerInstance = $this->factory->getInstance($class, $this->model);
@@ -197,7 +191,6 @@ class Application
      */
     public function checkMethod($url)
     {
-
         if (isset($url[1])) {
 
             $newMethod = $url[1];
@@ -228,11 +221,9 @@ class Application
      */
     public function addBehaviour($url)
     {
-
         if ($this->defaultRoute == false) $this->params = $url ? array_values($url) : [];
 
         call_user_func_array([$this->controllerInstance, $this->defaultMethod], $this->params);
-
     }
 
     /**
@@ -244,7 +235,6 @@ class Application
      */
     public function unsetValue($arrayUrl, $index)
     {
-
         unset($arrayUrl[$index]);
 
         return $arrayUrl;
