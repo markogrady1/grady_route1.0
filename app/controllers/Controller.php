@@ -41,12 +41,10 @@ class Controller
      */
     public function acquireModel($class)
     {
-
         $class = 'models\\' . $class;
 
         $newModel = $this->factory->getInstance($class);
 
         return $newModel;
-
     }
 }
