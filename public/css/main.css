@@ -5,7 +5,7 @@ body {
 
 .header {
     height: 70px;
-    background-color: #000;
+    background-color: #252426;
     color: #fff;
 }
 
@@ -26,19 +26,83 @@ body {
 }
 
 footer {
+    position: relative;
     font-size: .8em;
-    text-align: center;
-    height: 50px;
-    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+    height: 200px;
+    background-color: #2b3a42;
     color: #fff;
 }
 
+.copy {
+    font-size: 1.1em;
+    color: #BAB9B9;
+    margin-bottom: 23px;
+}
+.footer-content {
+    position: absolute;
+    right: 100px;
+    top: 80px;
+}
+
+.social-ul {
+    list-style: none;
+    font-size: 17px;
+    padding-left: 20px;
+
+}
+
+.social-ul li {
+    display: inline-block;
+
+}
+
+.link {
+    background-color: #1f2b31;
+    width: 34px;
+    height: 34px;
+    padding:6px 10px ;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 5px;
+    -webkit-transition: background 0.4s;
+}
+
+.link:hover {
+    background-color:#ff3b30 ;
+}
+
+.facebook {
+    padding: 5px 11px;
+}
+
+.scroll-top-button {
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    padding:15px 10px;
+    background-color: #1f2b31;
+     -webkit-transition: background 0.4s;
+}
+
+.scroll-top-button:hover {
+    cursor: pointer;
+    background-color: #ff3b30;
+}
 .blog-links {
-  font-family: Georgia,"Times New Roman",Times,serif;
+    font-family: Georgia,"Times New Roman",Times,serif;
     text-decoration: none;
     color: #428BCA;
 }
+
 .blog-links:hover {
     text-decoration: underline;
+}
 
+.show() {
+    -webkit-transition: opacity 0.4s;
+    display:block;
+}
+.show-slow {
+    opacity:1;
 }
