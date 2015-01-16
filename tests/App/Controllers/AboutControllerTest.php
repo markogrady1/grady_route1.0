@@ -5,7 +5,10 @@ use controllers\AboutController;
 
 class AboutControllerTest extends \PHPUnit_Framework_TestCase
 {
-
+    /**
+     * Mock PDO object
+     * @var Mockery $PDOMock
+     */
     private $PDOMock;
     private $modelMock;
     private $factoryMock;
